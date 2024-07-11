@@ -18,7 +18,6 @@ Exemplos:
 | produto                 | tamanho | cor    | quantidade |
 | Augusta Pullover Jacket |         | Orange | 1          |
 
-
 Cenário: Comprar mais de 10 produtos iguais não é permitido
 Quando eu selecionar mais de 10 itens do mesmo produto
 E clicar no botão "Comprar"
