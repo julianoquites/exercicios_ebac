@@ -22,11 +22,7 @@ Quando eu estiver me cadastrando
 E preencher o campo de e-mail com "juliano!@ebac.com.br"
 Então deve exibir uma mensagem de alerta "e-mail inválido"
 
-Esquema do Cenário: Cadastro com campos vazios é inválido
+Cenário: Cadastro com campos vazios é inválido
 Quando eu apertar o botão "FINALIZAR COMPRA"
-E deixar os campos <nome>, <sobrenome>, <pais>, <endereco>, <cidade>, <cep>, <telefone> ou <email> vazios
+E deixar algum dos campos obrigatórios vazios
 Então deve exibir uma mensagem de alerta "Por favor, preencha os campos com informações válidas"
-
-Exemplos:
-| nome    | sobrenome | pais   | endereco   | cidade       | cep       | telefone   | email               |
-| Juliano |           | Brasil | Av. Gloria | Porto Alegre | 90900-200 | 5199998888 | juliano@ebac.com.br |
