@@ -4,7 +4,7 @@
 		"name": "Teste ServeRest - Módulo 13",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "20391556",
-		"_collection_link": "https://one-man-team-5948.postman.co/workspace/c2821399-0188-4d78-a8cd-e4bf7d1d17f9/collection/20391556-65ac39ee-3d43-4379-b9f2-3bb7e95b42bd?action=share&source=collection_link&creator=20391556"
+		"_collection_link": "https://one-man-team-5948.postman.co/workspace/Estudos-EBAC~c2821399-0188-4d78-a8cd-e4bf7d1d17f9/collection/20391556-65ac39ee-3d43-4379-b9f2-3bb7e95b42bd?action=share&source=collection_link&creator=20391556"
 	},
 	"item": [
 		{
@@ -23,14 +23,6 @@
 									"\r",
 									"pm.test(\"Validar usuário\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"Juliano Quites de Paula\");\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Status code é 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Validar resposta de usuário não encontrado\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"Usuário não encontrado\");\r",
 									"});"
 								],
 								"type": "text/javascript",
@@ -69,14 +61,6 @@
 									"\r",
 									"pm.test(\"Validar resposta de cadastro\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"Cadastro realizado com sucesso\");\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Status code é 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Validar resposta de cadastro inválido\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"Este email já está sendo usado\");\r",
 									"});"
 								],
 								"type": "text/javascript",
@@ -211,14 +195,6 @@
 									"pm.test(\"Validar resposta de exclusão\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"Registro excluído com sucesso\");\r",
 									"});\r",
-									"\r",
-									"pm.test(\"Status code é 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Validar resposta negativa de exclusão\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"Não é permitido excluir usuário com carrinho cadastrado\");\r",
-									"});\r",
 									""
 								],
 								"type": "text/javascript",
@@ -286,6 +262,128 @@
 							"path": [
 								"usuarios",
 								"ZB9Ow0jUIX5SQG46"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca por id inválido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code é 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validar resposta de usuário não encontrado\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Usuário não encontrado\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/usuarios/123uhxxdiuh12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios",
+								"123uhxxdiuh12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir usuário com carrinho cadastrado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code é 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validar resposta negativa de exclusão\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Não é permitido excluir usuário com carrinho cadastrado\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/usuarios/0uxuPY0cbmQhpEz1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios",
+								"0uxuPY0cbmQhpEz1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro com email já cadastrado",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code é 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validar resposta de cadastro inválido\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Este email já está sendo usado\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"John Doe\",\r\n  \"email\": \"johndoe@qa.com.br\",\r\n  \"password\": \"teste\",\r\n  \"administrador\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios"
 							]
 						}
 					},
