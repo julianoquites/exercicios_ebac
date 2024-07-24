@@ -1,0 +1,28 @@
+Módulo 16 - Testes Mobile Parte 1
+Juliano Quites
+
+First Name
+resource-id='firstName'
+
+Last Name
+resource-id=='lastName'
+
+Phone Number
+resource-id='phone'
+
+Email Address
+resource-id='email'
+
+Password
+resource-id='password'
+
+Re-enter Password
+resource-id='repassword'
+
+Create
+resource-id='create'
+
+Sign in
+text='Sign in'
+
+
